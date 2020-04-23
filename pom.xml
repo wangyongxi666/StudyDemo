@@ -13,6 +13,10 @@
         <module>dubbo-web</module>
         <module>springsecuritydemo</module>
         <module>swagger-study</module>
+        <module>jwt_test</module>
+        <module>study</module>
+        <module>springboot_start</module>
+        <module>JUC_Demo</module>
     </modules>
 
 
