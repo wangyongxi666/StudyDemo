@@ -17,6 +17,7 @@
         <module>study</module>
         <module>springboot_start</module>
         <module>JUC_Demo</module>
+        <module>POI_Demo</module>
     </modules>
 
 
