@@ -19,6 +19,7 @@
         <module>JUC_Demo</module>
         <module>POI_Demo</module>
         <module>facedemo</module>
+        <module>code-uitl</module>
     </modules>
 
 
