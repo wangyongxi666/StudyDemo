@@ -1,5 +1,6 @@
 package cn.itcast.generate.entity;
 
+
 import cn.itcast.generate.utils.StringUtils;
 
 import java.lang.reflect.Field;

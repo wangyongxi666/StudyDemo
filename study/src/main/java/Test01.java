@@ -1,3 +1,5 @@
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -10,34 +12,18 @@ import java.util.stream.Collectors;
  * @Version 1.0.0
 */
 public class Test01 {
+
   public static void main(String[] args) {
 
-    System.out.println("---------------ArraysList-----------------");
-    List<String> list = new ArrayList();
+    Class<Test01> test01Class = Test01.class;
 
-    list.add("2");
-    list.add("3");
-    list.add("4");
-    list.add("1");
-    list.add("9");
+    ClassLoader classLoader = test01Class.getClassLoader();
 
-    for (String str : list) {
-      System.out.println(str);
-    }
+    List<Object> objects = Collections.synchronizedList(new ArrayList<>());
+    objects.add(123);
 
-    System.out.println("---------------LinkedList-----------------");
-
-    List<String> list2 = new LinkedList();
-
-    list2.add("2");
-    list2.add("3");
-    list2.add("4");
-    list2.add("1");
-    list2.add("9");
-
-    for (String str : list2) {
-      System.out.println(str);
-    }
   }
 
 }
+
+

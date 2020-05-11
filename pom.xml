@@ -18,8 +18,10 @@
         <module>springboot_start</module>
         <module>JUC_Demo</module>
         <module>POI_Demo</module>
-        <module>facedemo</module>
         <module>code-uitl</module>
+        <module>activiti7_demo</module>
+        <module>written</module>
+        <module>rabbitmqdemo</module>
     </modules>
 
 

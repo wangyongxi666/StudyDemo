@@ -4,16 +4,14 @@ package cn.itcast.generate.entity;
 
 //数据库实体类
 public class DataBase {
-                                     //             127.0.0.1：3306/ihrm
+
     private static String mysqlUrl = "jdbc:mysql://[ip]:[port]/[db]?useUnicode=true&amp;characterEncoding=UTF8";
     private static String oracleUrl = "jdbc:oracle:thin:@[ip]:[port]:[db]";
 
     private String dbType;//数据库类型
+    private String driver;
     private String userName;
     private String passWord;
-
-
-    private String driver;
     private String url;
 
     public DataBase() {}
@@ -26,14 +24,6 @@ public class DataBase {
         this(dbType,"127.0.0.1","3306",db);
     }
 
-
-    /**
-     *
-     * @param dbType        数据库类型
-     * @param ip            ip
-     * @param port          3306
-     * @param db            ihrm
-     */
     public DataBase(String dbType,String ip,String port,String db) {
         this.dbType = dbType;
         if("MYSQL".endsWith(dbType.toUpperCase())) {

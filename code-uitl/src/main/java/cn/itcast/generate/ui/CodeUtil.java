@@ -8,6 +8,7 @@
 package cn.itcast.generate.ui;
 
 
+import cn.itcast.generate.core.GeneratorFacade;
 import cn.itcast.generate.entity.DataBase;
 import cn.itcast.generate.entity.Settings;
 import javax.swing.*;
@@ -535,18 +536,18 @@ public class CodeUtil extends JFrame {
 
 	/**
 	 *
-	 * @param templetPath		模板所在路径
-	 * @param outpath			选择代码生成路径
+	 * @param templatePath		模板所在路径
+	 * @param outPath			选择代码生成路径
 	 * @param settings			工程配置对象
 	 * @param db				数据库信息
 	 */
-	private void generator(String templetPath,String outpath,Settings settings,DataBase db) {
-		System.out.println(templetPath);
-		System.out.println(outpath);
-		System.out.println(settings);
-		System.out.println(db);
-//		GeneratorFacade gf = new GeneratorFacade(templetPath,outpath,settings);
-//		gf.generatorByTable(db);
+	private void generator(String templatePath,String outPath,Settings settings,DataBase db) throws Exception {
+		GeneratorFacade facade = new GeneratorFacade(templatePath, outPath, settings, db);
+		try {
+			facade.generatorByDataBase();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

@@ -1,3 +1,5 @@
+package cn.freemark;
+
 import freemarker.cache.FileTemplateLoader;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -12,7 +14,7 @@ import java.util.Map;
 
 
 /**
- * @ClassName FreemarkTest01
+ * @ClassName cn.freemark.FreemarkTest01
  * @Description (这里用一句话描述这个类的作用)
  * @Author YongXi.Wang
  * @Date 2020年04月28日 18:40
