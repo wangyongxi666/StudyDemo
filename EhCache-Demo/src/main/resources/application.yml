@@ -1,0 +1,18 @@
+server:
+  port: 8001
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 1234
+    url: jdbc:mysql:///million_data?characterEncoding=utf-8&serverTimezone=UTC
+  cache:
+    type: ehcache
+    ehcache:
+      config: classpath:ehcache-setting.xml
+mybatis:
+  type-aliases-package: com.chcache.pojo
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+

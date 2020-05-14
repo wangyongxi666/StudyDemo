@@ -34,7 +34,7 @@ public class GenerateTestData {
      * 清除模拟数据
      */
     public void clearTestFiles(){
-        jdbcTemplate.update("delete from t_file");
+        jdbcTemplate.update("delete from file_custom");
     }
 
     /**
@@ -49,7 +49,7 @@ public class GenerateTestData {
             files.add(new FileCustom(String.valueOf((i+30)),"文件"+(i+30),"vedio","content"+ (i+30)));
         }
         for(FileCustom file : files){
-            jdbcTemplate.update("insert into t_file (id,name,type,content,backedUp) values (?,?,?,?,?)",
+            jdbcTemplate.update("insert into file_custom (id,name,type,content,backedUp) values (?,?,?,?,?)",
                     new Object[]{file.getId(),file.getName(),file.getType(),file.getContent(),file.getBackedUp()});
         }
     }

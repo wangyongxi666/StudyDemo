@@ -21,7 +21,6 @@ public class VolatileDemo5 {
 
     volatileDemo5.test01();
     HashMap map = new HashMap();
-    map.put();
     new ArrayList<>(10);
 
   }

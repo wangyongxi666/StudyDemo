@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ehcache.mapper.TestDemoMapper">
+  <resultMap id="BaseResultMap" type="com.ehcache.pojo.TestDemo">
+    <!--@mbg.generated-->
+    <!--@Table test-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="apply_date" jdbcType="INTEGER" property="applyDate" />
+    <result column="applicant_ch" jdbcType="VARCHAR" property="applicantCh" />
+    <result column="applicant_en" jdbcType="VARCHAR" property="applicantEn" />
+    <result column="address_ch" jdbcType="VARCHAR" property="addressCh" />
+    <result column="agency" jdbcType="VARCHAR" property="agency" />
+    <result column="latest_status" jdbcType="INTEGER" property="latestStatus" />
+    <result column="options_start" jdbcType="INTEGER" property="optionsStart" />
+    <result column="options_end" jdbcType="INTEGER" property="optionsEnd" />
+    <result column="update" jdbcType="INTEGER" property="update" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, title, apply_date, applicant_ch, applicant_en, address_ch, agency, latest_status, 
+    options_start, options_end, `update`
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from test
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from test
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ehcache.pojo.TestDemo" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into test (title, apply_date, applicant_ch, 
+      applicant_en, address_ch, agency, 
+      latest_status, options_start, options_end, 
+      `update`)
+    values (#{title,jdbcType=VARCHAR}, #{applyDate,jdbcType=INTEGER}, #{applicantCh,jdbcType=VARCHAR}, 
+      #{applicantEn,jdbcType=VARCHAR}, #{addressCh,jdbcType=VARCHAR}, #{agency,jdbcType=VARCHAR}, 
+      #{latestStatus,jdbcType=INTEGER}, #{optionsStart,jdbcType=INTEGER}, #{optionsEnd,jdbcType=INTEGER}, 
+      #{update,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.ehcache.pojo.TestDemo" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into test
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="title != null">
+        title,
+      </if>
+      <if test="applyDate != null">
+        apply_date,
+      </if>
+      <if test="applicantCh != null">
+        applicant_ch,
+      </if>
+      <if test="applicantEn != null">
+        applicant_en,
+      </if>
+      <if test="addressCh != null">
+        address_ch,
+      </if>
+      <if test="agency != null">
+        agency,
+      </if>
+      <if test="latestStatus != null">
+        latest_status,
+      </if>
+      <if test="optionsStart != null">
+        options_start,
+      </if>
+      <if test="optionsEnd != null">
+        options_end,
+      </if>
+      <if test="update != null">
+        `update`,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="applyDate != null">
+        #{applyDate,jdbcType=INTEGER},
+      </if>
+      <if test="applicantCh != null">
+        #{applicantCh,jdbcType=VARCHAR},
+      </if>
+      <if test="applicantEn != null">
+        #{applicantEn,jdbcType=VARCHAR},
+      </if>
+      <if test="addressCh != null">
+        #{addressCh,jdbcType=VARCHAR},
+      </if>
+      <if test="agency != null">
+        #{agency,jdbcType=VARCHAR},
+      </if>
+      <if test="latestStatus != null">
+        #{latestStatus,jdbcType=INTEGER},
+      </if>
+      <if test="optionsStart != null">
+        #{optionsStart,jdbcType=INTEGER},
+      </if>
+      <if test="optionsEnd != null">
+        #{optionsEnd,jdbcType=INTEGER},
+      </if>
+      <if test="update != null">
+        #{update,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ehcache.pojo.TestDemo">
+    <!--@mbg.generated-->
+    update test
+    <set>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="applyDate != null">
+        apply_date = #{applyDate,jdbcType=INTEGER},
+      </if>
+      <if test="applicantCh != null">
+        applicant_ch = #{applicantCh,jdbcType=VARCHAR},
+      </if>
+      <if test="applicantEn != null">
+        applicant_en = #{applicantEn,jdbcType=VARCHAR},
+      </if>
+      <if test="addressCh != null">
+        address_ch = #{addressCh,jdbcType=VARCHAR},
+      </if>
+      <if test="agency != null">
+        agency = #{agency,jdbcType=VARCHAR},
+      </if>
+      <if test="latestStatus != null">
+        latest_status = #{latestStatus,jdbcType=INTEGER},
+      </if>
+      <if test="optionsStart != null">
+        options_start = #{optionsStart,jdbcType=INTEGER},
+      </if>
+      <if test="optionsEnd != null">
+        options_end = #{optionsEnd,jdbcType=INTEGER},
+      </if>
+      <if test="update != null">
+        `update` = #{update,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ehcache.pojo.TestDemo">
+    <!--@mbg.generated-->
+    update test
+    set title = #{title,jdbcType=VARCHAR},
+      apply_date = #{applyDate,jdbcType=INTEGER},
+      applicant_ch = #{applicantCh,jdbcType=VARCHAR},
+      applicant_en = #{applicantEn,jdbcType=VARCHAR},
+      address_ch = #{addressCh,jdbcType=VARCHAR},
+      agency = #{agency,jdbcType=VARCHAR},
+      latest_status = #{latestStatus,jdbcType=INTEGER},
+      options_start = #{optionsStart,jdbcType=INTEGER},
+      options_end = #{optionsEnd,jdbcType=INTEGER},
+      `update` = #{update,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -54,14 +54,15 @@ public class ElasticJobConfig {
                                                         final String shardingItemParameters){
         //JobCoreConfigurationBuilder
         JobCoreConfiguration.Builder JobCoreConfigurationBuilder = JobCoreConfiguration.newBuilder(jobClass.getName(), cron, shardingTotalCount);
-        //设置shardingItemParameters
+        //设置shardingItemParameters  任务分片
         if(!StringUtils.isEmpty(shardingItemParameters)){
             JobCoreConfigurationBuilder.shardingItemParameters(shardingItemParameters);
         }
         JobCoreConfiguration jobCoreConfiguration = JobCoreConfigurationBuilder.build();
         //创建SimpleJobConfiguration
         SimpleJobConfiguration simpleJobConfiguration = new SimpleJobConfiguration(jobCoreConfiguration, jobClass.getCanonicalName());
-        //创建LiteJobConfiguration
+        //创建LiteJobConfiguration (此处可以配置分片策略 .jobShardingStrategyClass("com.dangdang.ddframe.
+                                                        //job.lite.api.strategy.impl.OdevitySortByNameJobShardingStrategy"))
         LiteJobConfiguration liteJobConfiguration = LiteJobConfiguration.newBuilder(simpleJobConfiguration).overwrite(true)
                 .monitorPort(9888)//设置dump端口
                 .build();
@@ -88,6 +89,7 @@ public class ElasticJobConfig {
                 .build();
         return liteJobConfiguration;
     }
+
     @Bean(initMethod = "init")
     public SpringJobScheduler initSimpleElasticJob() {
         // 增加任务事件追踪配置

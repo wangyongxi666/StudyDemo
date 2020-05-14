@@ -25,7 +25,7 @@ public class FileService {
      * @return
      */
     public List<FileCustom> fetchUnBackupFiles(String fileType, Integer count){
-        String sql="select * from t_file where type = ? and backedUp = 0 limit 0,?";
+        String sql="select * from file_custom where type = ? and backed_up = 0 limit 0,?";
         List<FileCustom> files = jdbcTemplate.query(sql, new Object[]{fileType, count}, new BeanPropertyRowMapper(FileCustom.class));
         return files;
     }
@@ -36,7 +36,7 @@ public class FileService {
      */
     public void backupFiles(List<FileCustom> files){
         for(FileCustom fileCustom:files){
-            String sql="update t_file set backedUp = 1 where id = ?";
+            String sql="update file_custom set backed_up = 1 where id = ?";
             jdbcTemplate.update(sql,new Object[]{fileCustom.getId()});
             System.out.println(String.format("线程 %d | 已备份文件:%s  文件类型:%s"
                     ,Thread.currentThread().getId()
