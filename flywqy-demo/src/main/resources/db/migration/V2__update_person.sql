@@ -1,0 +1,1 @@
+ALTER TABLE person CHANGE placeofbirth comments VARCHAR(32);

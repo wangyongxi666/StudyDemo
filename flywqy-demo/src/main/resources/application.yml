@@ -1,0 +1,8 @@
+server:
+  port: 8001
+spring:
+  datasource:
+    url: jdbc:mysql:///flyway_test?characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.jdbc.Driver

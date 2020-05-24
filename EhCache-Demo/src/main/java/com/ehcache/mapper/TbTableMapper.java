@@ -13,10 +13,8 @@ import org.springframework.cache.annotation.Cacheable;
  * @Version 1.0.0
 */
 @Mapper
-@CacheConfig(cacheNames = {"tableCache"})
 public interface TbTableMapper {
 
-  @Cacheable
   public TbTable findById(int id);
 
 }
