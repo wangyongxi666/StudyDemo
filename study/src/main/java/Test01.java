@@ -14,14 +14,20 @@ import java.util.stream.Collectors;
 public class Test01 {
 
   public static void main(String[] args) {
+    List list = new ArrayList();
+    list.add("老大");
+    list.add("老二");
+    list.add("老二");
+    list.add("老三");
+    list.add("老四");
 
-    Class<Test01> test01Class = Test01.class;
+//    List newList = (List) list.stream().filter(e -> e.equals("老二")).collect(Collectors.toList());
 
-    ClassLoader classLoader = test01Class.getClassLoader();
+    for (Object o : list) {
 
-    List<Object> objects = Collections.synchronizedList(new ArrayList<>());
-    objects.add(123);
+    }
 
+    System.out.print(list);
   }
 
 }

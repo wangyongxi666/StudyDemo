@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>create钩子函数</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <h2 >{{msg}}</h2>
+    <h1>{{num1 + num2}}</h1>
+</div>
+
+<script type="text/javascript">
+
+    var app = new Vue({
+        el:'#app',
+        data:{
+            msg:"你好",
+            num1:1,
+            num2:10
+        },
+        created(){
+            this.msg = "我给你回话了";
+        },
+
+    })
+
+</script>
+</body>
+</html>

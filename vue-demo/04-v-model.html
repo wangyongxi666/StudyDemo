@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双向绑定</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <input type="checkbox" value="java" v-model="choose">java<br>
+    <input type="checkbox" value="c++" v-model="choose">c++<br>
+    <input type="checkbox" value="python" v-model="choose">python<br>
+
+    <h2>
+        你选择了{{choose.join(",")}}
+    </h2>
+
+    <input type="checkbox" value="java" v-model="ischoose">java<br>
+    <h2>
+        是否选择了{{ischoose}}
+    </h2>
+</div>
+
+<script type="text/javascript">
+
+    var app = new Vue({
+        el:'#app',
+        data:{
+            choose:[],
+            ischoose:true
+        },
+    })
+
+</script>
+
+</body>
+</html>

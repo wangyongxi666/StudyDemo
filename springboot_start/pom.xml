@@ -12,6 +12,7 @@
 
     <groupId>com.dubboDemo</groupId>
     <artifactId>spring-boot_start</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
         <module>common</module>

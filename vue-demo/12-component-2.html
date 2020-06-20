@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组建间的通信</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    子组建接收父组建传过来的值，组建间的通信
+    <counter2 :title="msg"></counter2>
+
+</div>
+
+
+<script type="text/javascript">
+
+    //定义组建 子
+    const counter2 = {
+        template:"<h2>{{title}}</h2>",
+        //接收父组件的属性
+        props:['title']
+    }
+
+    //注册组建:在所有的vue实例中都可以使用组建
+    Vue.component("counter2",counter2);
+
+    //局部组成 该实例中才能使用 app实例
+    var app = new Vue({
+        el:'#app',
+        data:{
+            msg:"我是父组件的msg内容"
+        }
+
+    })
+
+</script>
+</body>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+</html>

@@ -4,9 +4,12 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.mybatisplus.mapper.BrandMapper;
+import com.mybatisplus.mapper.TableMapper;
 import com.mybatisplus.pojo.Brand;
+import com.mybatisplus.pojo.Table;
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,6 +19,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.annotation.ApplicationScope;
 
+import java.time.Year;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +31,8 @@ public class MybatisPlusApplicationTests {
 
 	@Autowired
 	private BrandMapper brandMapper;
+	@Autowired
+	private TableMapper tableMapper;
 
 	//查询全部
 	@Test
@@ -138,6 +144,15 @@ public class MybatisPlusApplicationTests {
         Brand brand = brandMapper.findById(12L);
         System.out.println(brand);
     }
+
+    /**
+     * 批量更新
+    **/
+    @Test
+    public void test01(){
+		int i = tableMapper.updateNameByNumber(0);
+		System.out.println(i);
+	}
 
 
 

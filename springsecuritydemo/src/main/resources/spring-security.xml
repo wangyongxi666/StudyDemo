@@ -99,7 +99,7 @@
 
     <!--开启spring 注解 , 使用mvc开启-->
     <mvc:annotation-driven/>
-    <context:component-scan base-package="com.itheima.controller"/>
+    <context:component-scan base-package="com.itheima.com.security.session.controller"/>
 
     <!--开启注解方式控制权限-->
     <security:global-method-security pre-post-annotations="enabled"/>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通过计算后，并获得返回值的函数</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <h1>需要通过一系列操作，最后得到返回数据的操作</h1>
+
+    您的生日是：
+    {{new Date(birthday).getFullYear()}} - {{new Date(birthday).getMonth()+1}}
+
+    <hr>
+
+    简写 使用 computed 可以计算数值并进行返回
+    {{birth}}
+</div>
+
+
+<script type="text/javascript">
+
+    var app = new Vue({
+        el:'#app',
+        data:{
+            birthday:1429032123201
+        },
+        computed:{
+            birth(){
+                const date = new Date(this.birthday);
+                return date.getFullYear() + " - " + (date.getMonth() + 1)
+            }
+        }
+    })
+
+</script>
+</body>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+</html>

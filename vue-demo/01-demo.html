@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vuejs测试</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <input type="text" v-model="num">
+    <button v-on:click="num++">点我自增</button>
+    <button v-on:click="num--">点我自减</button>
+    <h2>{{name}}</h2> 有{{num}}个学科
+</div>
+
+<script type="text/javascript">
+
+var app = new Vue({
+        el:"#app",
+        data:{
+            name:"黑马",
+            num:1
+        }
+    })
+</script>
+
+</body>
+</html>

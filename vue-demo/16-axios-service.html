@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子组建向父组建的通信</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <ul>
+        <li v-for="user in users" :key="user.id">
+            {{user.name}}
+        </li>
+    </ul>
+
+</div>
+
+
+<script type="text/javascript">
+
+
+    var app = new Vue({
+        el:'#app',
+        data:{
+            users:[]
+        },
+        //读取json数据
+        created(){
+            axios
+            .get("http://localhost:8080/vue/get")
+            .then((res) => {
+                console.log(res);
+                //这里不能使用this，在axios中this标识窗口，不是vue实例
+                app.users = res.data;
+            })
+            .catch(err => alert(err))
+        }
+
+    })
+
+</script>
+</body>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+</html>

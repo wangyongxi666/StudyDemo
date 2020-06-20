@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     <mapper namespace="com.mybatisplus.mapper.BrandMapper">
 
-        <select id="findById" resultType="com.mybatisplus.pojo.Brand">
+        <select id="findById" resultType="com.mybatisplus.com.security.session.pojo.Brand">
           select * from tb_brand where id = #{id}
         </select>
 

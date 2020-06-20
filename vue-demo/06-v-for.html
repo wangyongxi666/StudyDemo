@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-xxx</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    输出数组
+    <h5 v-for="(user,index) in users" :key="index">
+        {{index}}  -- {{user.name}}
+    </h5>
+
+    <hr>
+
+    输出对象
+    <h5 v-for="(value,key,index) in person">
+        {{index}} -- {{key}} -- {{value}}
+    </h5>
+
+
+</div>
+
+<script type="text/javascript">
+
+    var app = new Vue({
+        el:'#app',
+        data:{
+            users:[
+                {"name":"小明","age":15,"gender":"男"},
+                {"name":"小红","age":14,"gender":"女"},
+                {"name":"小东","age":18,"gender":"男"}
+            ],
+            person:{"name":"小明","age":15,"gender":"男"}
+        },
+    })
+
+</script>
+
+</body>
+</html>

@@ -5,7 +5,7 @@
 <mapper namespace="com.ehcache.mapper.TbTableMapper">
 
 
-    <select id="findById" resultType="com.ehcache.pojo.TbTable">
+    <select id="findById" resultType="com.ehcache.com.security.session.pojo.TbTable">
         select * from tb_table where id = #{id}
     </select>
 

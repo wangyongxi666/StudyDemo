@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子组建向父组建的通信</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <h1>点击按钮 修改子组建的值 并传递到父组建中(点击子组件按钮，修改父组建的值)</h1>
+    （1）使用子组件自身方法<br>
+    （2）调用了子组件域的事件，该事件绑定了父组件的方法<br>
+    （3）调用父组建域的方法对父组件的值进行修改<br>
+    <!--3）调用父组建域的方法对父组件的值进行修改-->
+    <sum @perjia="numjia" @perjian="numjian" :sumnum="num"></sum>
+
+    显示父组件的值
+    <h2>{{num}}</h2>
+</div>
+
+
+<script type="text/javascript">
+
+    //定义组建
+    const sum = {
+        template:
+        `
+            <div>
+                <!--（1）使用子组件自身方法-->
+                 <button @click='jia'>+</button>
+                 <button @click='jian'>-</button>
+            <div>
+        `,
+        props:["sumnum"],
+        methods:{
+            jia(){
+                //（2）调用了子组件域的事件
+                return this.$emit("perjia")
+            },
+            jian(){
+                return this.$emit("perjian")
+            }
+        }
+    }
+
+    //局部组成 该实例中才能使用 app实例
+    var app = new Vue({
+        el:'#app',
+        data:{
+            num:0
+        },
+        components:{
+            sum:sum
+        },
+        methods:{
+            numjia(){
+                this.num++;
+            },
+            numjian(){
+                this.num--;
+            }
+        }
+
+    })
+
+</script>
+</body>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+</html>

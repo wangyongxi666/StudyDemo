@@ -18,5 +18,5 @@
     <!-- 引用dubbo 服务 -->
     <dubbo:application name="dubbo-web" />
     <dubbo:registry address="zookeeper://192.168.72.128:2181"/>
-    <dubbo:annotation package="cn.itcast.dubboxdemo.controller" />
+    <dubbo:annotation package="cn.itcast.dubboxdemo.com.security.session.controller" />
 </beans>

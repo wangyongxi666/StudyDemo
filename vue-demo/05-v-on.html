@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击事件</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <button @click="num++">增加</button>
+    <button @click="min">减少</button>
+    <button v-on:click="min">我再减少</button>
+
+    <h2>{{num}}</h2>
+
+    事件冒泡测试：点击子组建，默认父组建也会被调用,可以使用@click.stop进行解决
+    <div style="background-color:red;width:100px;height:100px" @click="print('我是父组建')">
+        <button @click="print('我是子组建')">未解决点我试试</button>
+    </div>
+    <div style="background-color:red;width:100px;height:100px" @click="print('我是父组建')">
+        <button @click.stop="print('我是子组建')">已解决点我试试</button>
+    </div>
+
+    阻止默认事件: 点击触发方法后，会一并触发默认的功能，比如a标签的跳转功能 <br>
+    <a href="http://www.baidu.com" @click="print('我不想跳转')">点我跳转</a><br>
+    <a href="http://www.baidu.com" @click.prevent="print('我不想跳转')">已阻止跳转，点我跳转</a>
+
+
+</div>
+
+<script type="text/javascript">
+
+    var app = new Vue({
+        el:'#app',
+        data:{
+            num:0
+        },
+        methods:{
+            min(){
+                this.num --
+            },
+            print(msg){
+                console.log(msg);
+            }
+        }
+    })
+
+</script>
+
+</body>
+</html>

@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("tb_table")
+//@TableName("tb_table")
 public class Table {
 
   private int id;

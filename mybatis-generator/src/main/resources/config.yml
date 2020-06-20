@@ -22,9 +22,9 @@ templateConfig:
     destFileName: ${entityName}Service.java
 
   # REST-ful Controller
-  - template: java/controller.vm
+  - template: java/com.security.session.controller.vm
     destDir: src/main/java
-    destPackage: com.shushang.erp.controller.${entityName}
+    destPackage: com.shushang.erp.com.security.session.controller.${entityName}
     destFileName: ${entityName}Controller.java
 
   # 生成models/index.js

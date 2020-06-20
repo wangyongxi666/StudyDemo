@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>给标签的属性值填充值</title>
+    <style>
+        .pink{
+            background-color:pink;
+        }
+        .blue{
+             background-color:blue;
+        }
+    </style>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <font size="5" v-bind:color="ys1">传智播客</font>
+    <font size="5" :color="ys2">黑马程序员</font>
+    <hr>
+    <a v-bind={href:"http://www.itcast.cn/index/"+id}>itcast</a>
+
+    <hr>
+    用v-bind 绑定的值，可以直接设置进去属性中作为属性值，否则会报错
+    <button @click="bool=!bool" >点我变色</button>
+    <div :class="{blue:bool,pink:!bool}">
+        点击改变颜色
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    var app = new Vue({
+        el:'#app',
+        data:{
+            ys1:"red",
+            ys2:"green",
+            id:1,
+            pink:"pink",
+            blue:"blue",
+            bool:true
+        },
+    })
+
+</script>
+
+</body>
+</html>

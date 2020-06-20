@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-xxx</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <button @click="isShow=!isShow">点我隐藏</button>
+
+
+    输出对象
+    <h5 v-if="isShow" v-for="(value,key,index) in person">
+        {{index}} -- {{key}} -- {{value}}
+    </h5>
+
+    <hr>
+
+    输出数组 : 默认输出女性
+    <h5 v-if="user.gender=='女'" v-for="(user,index) in users" :key="index">
+        {{index}}  -- {{user.name}}
+    </h5>
+    <hr>
+
+    输出数组 : 男女不同色
+    <h5 v-for="(user,index) in users" :key="index">
+        <span v-if="user.gender=='女'" style="color:pink">
+            {{index}}  -- {{user.name}}
+        </span>
+        <span v-else-if="user.gender=='男'" style="color:blue">
+            {{index}}  -- {{user.name}}
+        </span>
+        <span v-else="" style="color:black">
+            {{index}}  -- {{user.name}}
+        </span>
+    </h5>
+
+    <hr>
+    v - show:
+    <h5 v-show="1==1">
+        只有1 = 1的时候我才显示
+    </h5>
+
+
+</div>
+
+<script type="text/javascript">
+
+    var app = new Vue({
+        el:'#app',
+        data:{
+            isShow:true,
+            users:[
+                {"name":"小明","age":15,"gender":"男"},
+                {"name":"小红","age":14,"gender":"女"},
+                {"name":"小东","age":18,"gender":"都不是"}
+            ],
+            person:{"name":"小明","age":15,"gender":"男"}
+        },
+    })
+
+</script>
+
+</body>
+</html>

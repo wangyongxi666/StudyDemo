@@ -20,7 +20,7 @@ import java.math.BigInteger;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("tb_brand")
+//@TableName("tb_brand")
 public class Brand {
 
     @TableId(type = IdType.AUTO)

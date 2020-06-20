@@ -3,6 +3,8 @@ package com.mybatisplus.mapper;
 import com.baomidou.mybatisplus.core.injector.methods.UpdateById;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.mybatisplus.pojo.Table;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 /**
  * @ClassName TableMapper
@@ -13,5 +15,7 @@ import com.mybatisplus.pojo.Table;
 */
 public interface TableMapper extends BaseMapper<Table> {
 
+  @Update("UPDATE TB_TABLE SET NAME = '大佬张' WHERE NUMBER = #{number}")
+  public int updateNameByNumber(Integer number);
 
 }

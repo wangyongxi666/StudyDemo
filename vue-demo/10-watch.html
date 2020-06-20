@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>深度监测，数值变化前后的值获取</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <h1>用于对数据的深度监控，可以用于下拉框，改变数据后，对于最新的值作出一些操作</h1>
+
+    深度监控
+    <input v-model="msg" >
+
+    <hr>
+    <button @click="person.name='baima'">点我变白马</button>
+</div>
+
+
+<script type="text/javascript">
+
+
+    var app = new Vue({
+        el:'#app',
+        data:{
+            msg:"黑马",
+            person:{"name":"heima","age":13}
+        },
+        watch:{
+            msg(newV,oldV){
+                console.log(newV + "-" + oldV)
+            },
+            person:{
+                deep:true,
+                //获取最新对象
+                handler(obj){
+                    console.log("name = " + obj.name + ";age=" + obj.age )
+                }
+            }
+        }
+    })
+
+</script>
+</body>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+</html>

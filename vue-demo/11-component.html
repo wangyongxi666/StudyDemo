@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定义组建</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    使用组建
+    <counter></counter>
+
+</div>
+
+
+<script type="text/javascript">
+
+    //定义组建
+    const counter = {
+        template:"<button @click='num++'>你点击了{{num}}次</button>",
+        data(){
+            return {num:0}
+        }
+    }
+
+    //注册组建:在所有的vue实例中都可以使用组建
+    //Vue.component("counter",counter);
+
+    //局部组成 该实例中才能使用 app实例
+    var app = new Vue({
+        el:'#app',
+        components:{
+            counter:counter
+        }
+
+    })
+
+</script>
+</body>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+</html>
