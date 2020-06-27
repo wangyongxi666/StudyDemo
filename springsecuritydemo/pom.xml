@@ -54,7 +54,7 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
+            <artifactId>spring-security-com.security.distributed.order.config</artifactId>
             <version>5.0.5.RELEASE</version>
         </dependency>
         <dependency>

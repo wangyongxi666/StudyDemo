@@ -50,7 +50,7 @@ public class ServiceControllerPlugin extends PluginAdapter {
         InputStream resourceAsStream = null;
         //读取配置文件,如果不存在外部配置文件,那么就使用内部默认配置文件
         try {
-            resourceAsStream = new FileInputStream(System.getProperty("user.dir")+"/src/main/resources/config.yml");
+            resourceAsStream = new FileInputStream(System.getProperty("user.dir")+"/src/main/resources/com.security.distributed.order.config.yml");
         } catch (FileNotFoundException e) {
             log.info("不存在外部config.yml,将使用默认config.yml");
         }

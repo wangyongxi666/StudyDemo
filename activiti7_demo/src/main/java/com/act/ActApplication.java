@@ -25,12 +25,12 @@ public class ActApplication {
   @Bean
   public HttpMessageConverters fastJsonHttpMessageConverters() {
 //    FastJsonHttpMessageConverter fjc = new FastJsonHttpMessageConverter();
-//    FastJsonConfig config = new FastJsonConfig();
-//    config.setSerializerFeatures(SerializerFeature.PrettyFormat);
+//    FastJsonConfig com.security.distributed.order.config = new FastJsonConfig();
+//    com.security.distributed.order.config.setSerializerFeatures(SerializerFeature.PrettyFormat);
 //    SimplePropertyPreFilter filter = new SimplePropertyPreFilter();
 //    filter.getExcludes().add("identityLinks");
-//    config.setSerializeFilters(filter);
-//    fjc.setFastJsonConfig(config);
+//    com.security.distributed.order.config.setSerializeFilters(filter);
+//    fjc.setFastJsonConfig(com.security.distributed.order.config);
 //    HttpMessageConverter<?> converter = fjc;
 //    return new HttpMessageConverters(converter);
     return null;

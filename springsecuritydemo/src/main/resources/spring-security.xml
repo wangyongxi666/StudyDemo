@@ -20,12 +20,12 @@
     <security:http security="none" pattern="/login.html"/>
     <!--
         http：用于定义相关权限控制
-        auto-config：是否自动配置
+        auto-com.security.distributed.order.config：是否自动配置
                         设置为true时框架会提供默认的一些配置，例如提供默认的登录页面、登出处理等
                         设置为false时需要显示提供登录表单配置，否则会报错
         use-expressions：用于指定intercept-url中的access属性是否使用表达式
     -->
-    <security:http auto-config="true" use-expressions="true">
+    <security:http auto-com.security.distributed.order.config="true" use-expressions="true">
         <!--只需要认证通过就可以访问的页面-->
         <security:intercept-url pattern="/pages/a.html" access="isAuthenticated()"/>
         <!--需要拥有add权限-->
@@ -95,7 +95,7 @@
           class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
 
     <!--开启spring 注解-->
-    <context:annotation-config/>
+    <context:annotation-com.security.distributed.order.config/>
 
     <!--开启spring 注解 , 使用mvc开启-->
     <mvc:annotation-driven/>

@@ -1,7 +1,7 @@
 import Utils from "../utils";
 
-const { request, config } = Utils;
-const { apiPrefix } = config;
+const { request, com.security.distributed.order.config } = Utils;
+const { apiPrefix } = com.security.distributed.order.config;
 const { basePrefix } = `${apiPrefix}/${table.entityName.toLowerCase()}`;
 
 // 获取分页列表
